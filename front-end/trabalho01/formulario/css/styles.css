@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    background: url(../imgs/backgroud.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+form {
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;  
+    border: 3px solid #1f2687a4;
+    box-shadow: 0 8px 32px 0 #eaeaf042;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form h1 {
+    font-size: 2.5em;
+}
+
+.campo {
+    width: 70%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #1f2687b0;
+}
+
+.campo label {
+    font-size: 1.2em;
+}
+
+.campo input {
+    width: 80%;
+    font-size: 1.2em;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.campo input:focus {
+    background: #1f2687b0 ;
+    border-radius: 5px;
+}
+
+.campo input {
+    background: #2f2f2f ;
+}
+
+.campo input:focus::placeholder {
+    color: white;
+}
+
+p {
+    text-align: center;
+}
+
+#btns {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btns input {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid #1f2687b0;
+    background-color: transparent;
+    color: #1f2687;
+    font-size: 1.2em;
+}
+
+#btns input:hover {
+    transform: translate(5px, -5px);
+    box-shadow: -5px 5px #444;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+
+#btns input:active {
+    transform: none;
+    box-shadow: none;
+}
+
+
+
+

@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* zera a margin e o padding de TODOS as tags */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: url(/backgroud.jpg);
+}
+
+#container {
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 20px;  
+    border: 3px solid #1f2687a4;
+    box-shadow: 0 8px 32px 0 #eaeaf042;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    width: 150px;
+    height: 50px;
+}
+
+/* ====================== pseudo-classes */
+
+/* adiciona a esquerda  */
+h1::before {
+    content: "\1F680";
+}
+
+/* muda o estilo se o mouse estiver sobre o elemento */
+#container a:hover {
+    text-decoration: underline;
+}
+
+/* muda o estilo se o elemento for clicado */
+.link:active {
+    font-size: 1.7em;
+    color: blue;
+}
+
+/* muda a cor se o site já foi visitado */
+.link:visited {
+    font-size: 1.7em;
+    color: red;
+}
+
+/* seleciona os filhos impares */
+.lista li:nth-child(odd) {
+    background-color: red;
+    font-size: 1.7em;
+}
+
+/* seleciona os filhos pares */
+.lista li:nth-child(even) {
+    background-color: blue;
+    font-size: 1.7em;
+}
+
+/* Seleciona o atributo da tag */
+a [target] {
+    background-color: green;
+}
+
+/* altera somente os elementos filhos diretos */
+.lista li > h5 {
+    background-color: yellow;
+}
+
+/* seletor para o butao quando ele estiver desativado */
+button:disabled {
+    background-color: red;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
