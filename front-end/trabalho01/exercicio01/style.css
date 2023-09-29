@@ -8,29 +8,63 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background: url(/backgroud.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #container {
-    width: 60vw;
-    height: 50vh;
+    width: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: aliceblue;
+    background-color: #f0f8ffea;
     border-radius: 20px;  
     border: 3px solid #1f2687a4;
     box-shadow: 0 8px 32px 0 #eaeaf042;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 button {
     width: 150px;
     height: 50px;
+}
+
+footer {
+    background-color: #f0f8ffea;
+    border-top: 3px solid #1f2687a4;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    z-index: -1;
+}
+
+dt {
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #1f2687;
+    color: #1f2687;
+}
+
+dd {
+    margin: 2px;
 }
 
 /* ====================== pseudo-classes */
@@ -47,26 +81,22 @@ h1::before {
 
 /* muda o estilo se o elemento for clicado */
 .link:active {
-    font-size: 1.7em;
     color: blue;
 }
 
 /* muda a cor se o site já foi visitado */
 .link:visited {
-    font-size: 1.7em;
     color: red;
 }
 
 /* seleciona os filhos impares */
 .lista li:nth-child(odd) {
     background-color: red;
-    font-size: 1.7em;
 }
 
 /* seleciona os filhos pares */
 .lista li:nth-child(even) {
     background-color: blue;
-    font-size: 1.7em;
 }
 
 /* Seleciona o atributo da tag */
@@ -83,6 +113,24 @@ a [target] {
 button:disabled {
     background-color: red;
     color: white;
+}
+
+button:disabled:hover {
+    transform: scale(1.1);
+    transition: .7s;
+}
+
+button:disabled:active {
+    transform: none;
+}
+
+
+
+
+@media screen and (max-height: 600px) {
+    footer {
+        display: none;
+    }
 }
 
 

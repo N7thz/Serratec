@@ -9,8 +9,9 @@
 
 body {
     width: 100vw;
-    height: 100vh;
     display: flex;
+    background: url(https://conteudo.imguol.com.br/c/esporte/ef/2021/12/24/botafogo-1640383112434_v2_900x506.jpg) no-repeat center center fixed;
+    background-size:cover ;
     flex-direction: column;
     justify-content: space-between;
     overflow-x: hidden;
@@ -18,21 +19,20 @@ body {
 
 header {
     width: 100vw;
-    height: 80px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     margin-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
 header img {
-    width: 40px;
-    height: 40px;
+    width: 70px;
     margin-left: 20px;
     position: absolute;
     left: 10px;
@@ -40,7 +40,9 @@ header img {
 
 
 main {
+    animation: load 1s ease-in-out both;
     width: calc(100% - 2vw);
+    margin-top: 30px;
     display: flex;
     justify-content: space-around;
 }
@@ -49,6 +51,9 @@ main {
     border: 1px solid black;
     width: 45vw;
     max-width: 600px;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
 }
 
 .container p {
@@ -61,13 +66,14 @@ main {
     width: 250px;
     float: left;
     margin: 5px;
+    border-radius: 10px;
 }
 
 footer {
     height: 150px;
     margin-top: 100px;
     background-color: white;
-    border-top: 1px solid black;
+    border-top: 2px solid black;
     text-align: center;
 }
 
@@ -85,4 +91,43 @@ footer ul {
 footer li {
     font-size: 1.2em;
     list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes load {
+    from {
+        opacity: .1;
+        transform: translateY(-10vw);
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    header h1 {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+
+    header img {
+        display: none;
+    }
+    
+    main {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+    } 
+
+    .container {
+        width: 80%;
+    }
+
+    .container img {
+        width: 95%;
+        float: none;
+    }
 }

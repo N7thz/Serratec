@@ -59,10 +59,6 @@ form h1 {
     border-radius: 5px;
 }
 
-.campo input {
-    background: #2f2f2f ;
-}
-
 .campo input:focus::placeholder {
     color: white;
 }
@@ -98,7 +94,3 @@ p {
     transform: none;
     box-shadow: none;
 }
-
-
-
-
