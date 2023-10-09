@@ -3,6 +3,8 @@ package br.com.serratec.lojinha.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,27 +25,35 @@ public class FormaPagamentoController {
     private FormaPagamentoService formaPagamentoService;
 
     @GetMapping
-    public List<FormaPagamento> obterTodos(){
-        return formaPagamentoService.obterTodos();
+    public ResponseEntity<List<FormaPagamento>> obterTodos() {
+
+        List<FormaPagamento> pagamentos = formaPagamentoService.obterTodos();
+        return ResponseEntity.ok(pagamentos);
     }
 
     @GetMapping("/{id}")
-    public FormaPagamento obter(@PathVariable long id){
-        return this.formaPagamentoService.obter(id);
+    public ResponseEntity<FormaPagamento> obter(@PathVariable long id) {
+
+        return ResponseEntity
+            .status(200)
+            .body(formaPagamentoService.obter(id));
     }
 
     @PostMapping
-    public FormaPagamento adicionar(@RequestBody FormaPagamento formaPagamento){
-        return formaPagamentoService.adicionar(formaPagamento);
+    public ResponseEntity<FormaPagamento> adicionar(@RequestBody FormaPagamento formaPagamento) {
+
+        return new ResponseEntity<>(formaPagamento, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public FormaPagamento atualizar(@PathVariable long id, @RequestBody FormaPagamento formaPagamento){
-        return formaPagamentoService.atualizar(id, formaPagamento);
+    public ResponseEntity<FormaPagamento> atualizar(@PathVariable long id, @RequestBody FormaPagamento formaPagamento) {
+
+        return ResponseEntity.ok(formaPagamentoService.atualizar(id, formaPagamento));
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable long id){
-        formaPagamentoService.deletar(id);
+    public ResponseEntity<?> deletar(@PathVariable long id){
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

@@ -3,6 +3,8 @@ package br.com.serratec.lojinha.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,27 +25,34 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
-    public List<Cliente> obterTodos(){
-        return clienteService.obterTodos();
+    public ResponseEntity<List<Cliente>>  obterTodos(){
+
+        List<Cliente> clientes = clienteService.obterTodos();
+        return ResponseEntity.ok(clientes);
     }
 
     @GetMapping("/{id}")
-    public Cliente obter(@PathVariable long id){
-        return this.clienteService.obter(id);
+    public ResponseEntity<Cliente> obter(@PathVariable long id){
+
+        return ResponseEntity.ok(clienteService.obter(id));
     }
 
     @PostMapping
-    public Cliente adicionar(@RequestBody Cliente cliente){
-        return clienteService.adicionar(cliente);
+    public ResponseEntity<Cliente> adicionar(@RequestBody Cliente cliente){
+
+        return new ResponseEntity<>(cliente, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public Cliente atualizar(@PathVariable long id, @RequestBody Cliente cliente){
-        return clienteService.atualizar(id, cliente);
+    public ResponseEntity<Cliente> atualizar(@PathVariable long id, @RequestBody Cliente cliente){
+
+        return ResponseEntity.ok(clienteService.atualizar(id, cliente));
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable long id){
+    public ResponseEntity<?> deletar(@PathVariable long id){
+
         clienteService.deletar(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
