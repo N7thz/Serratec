@@ -9,10 +9,8 @@ public class ContaCorrente {
     private String numero;
     private double saldo;
     private Date dataCadastro;
-
     
-
-    public ContaCorrente(long id, String agencia, String numero, double saldo, Date dataCadastro) {
+    public ContaCorrente(long id, String agencia, String numero, double saldo) {
         this.id = id;
         this.agencia = agencia;
         this.numero = numero;
@@ -20,6 +18,10 @@ public class ContaCorrente {
         this.dataCadastro = new Date();
     }
 
+    public ContaCorrente() {
+        this.dataCadastro = new Date();
+    }
+    
     //#region Getter's and Setter's
         public long getId() {
             return id;
@@ -49,8 +51,16 @@ public class ContaCorrente {
             return saldo;
         }
 
+        public void setSaldo(double saldo) {
+            this.saldo = saldo;
+        }
+
         public Date getDataCadastro() {
             return dataCadastro;
-        }    
+        }
+
+        public void setDataCadastro(Date dataCadastro) {
+            this.dataCadastro = dataCadastro;
+        }
     //#endregion
 }
