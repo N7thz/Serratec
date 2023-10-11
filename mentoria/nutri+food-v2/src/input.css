@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* components */
+@layer components {
+    .btns {
+        @apply w-2/6 h-1/2 bg-green-logo rounded-lg flex items-center justify-center text-2xl text-white shadow-orange-btn
+    }
+}
+    
