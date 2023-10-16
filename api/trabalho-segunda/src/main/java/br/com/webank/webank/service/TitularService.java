@@ -38,7 +38,7 @@ public class TitularService {
 
     public List<TitularResponseDTO> obterTodos(){
 
-       List<Titular> titulares = titularRepository.findAll();
+        List<Titular> titulares = titularRepository.findAll();
 
         return titulares
             .stream()
