@@ -1,0 +1,21 @@
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+    "email": "fulano@gmail.com",
+    "senha": "123456",
+    "nome": "Fulano da Silva",
+    "tipoPerfil": "GERENTE"
+}
+
+###
+
+POST http://localhost:8080/api/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "fulano@gmail.com",
+    "senha": "123456"
+}
+
+
