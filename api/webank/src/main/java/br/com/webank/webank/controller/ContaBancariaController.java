@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,11 +25,13 @@ public class ContaBancariaController {
     private ContaBancariaService contaBancariaService;
 
     @GetMapping
+    @PreAuthorize("hasAuthority('GERENTE')")
     public ResponseEntity<List<ContaBancaria>> obterTodos(){
         return ResponseEntity.ok(contaBancariaService.obterTodos());
     }
     
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('VENDEDOR')")
     public ResponseEntity<ContaBancaria> obterPorId(@PathVariable Long id){
         return ResponseEntity.ok(contaBancariaService.obterPorId(id));
     }

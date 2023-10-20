@@ -44,7 +44,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponseDTO> adicionar(@RequestBody UsuarioRequestDTO usuario){
+    public ResponseEntity<UsuarioResponseDTO> adicionar(@RequestBody UsuarioRequestDTO usuario) {
+
         UsuarioResponseDTO usuarioAdicionado = usuarioService.adicionar(usuario);
 
         return ResponseEntity

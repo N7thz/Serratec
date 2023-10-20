@@ -4,10 +4,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8080/api/enderecos/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk3NjczNTU1LCJleHAiOjE2OTc3NTk5NTV9.BF3af3-ZY6rvXeTGjGgYUDZr4MYG9aqlf_jlqvcigMU
 ###
 
 POST http://localhost:8080/api/enderecos
 Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjk3Njc2NzUwLCJleHAiOjE2OTc3NjMxNTB9.8R_w_0JQ_e_FETAeYudjSVgMJNQlfstP4dcuRvmO3m0
 
 {
     "cep":"2898542",
@@ -18,22 +20,26 @@ Content-Type: application/json
     "cidade":"Teresópolis",
     "uf": "RJ",
     "titular": {
-        "id": 1
+        "id": 2
     }
 }
 ### 
 
-PUT http://localhost:8080/api/enderecos/2
+PUT http://localhost:8080/api/enderecos/4
 Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk3Njc3Mjk0LCJleHAiOjE2OTc3NjM2OTR9.jItZBfcLLp5OuLYeEw8cd9zMJ1ceRYHVrHdu32MOSMA
 
 {
-  "cep": "2898543",
-  "logradouro": "Rua das flores",
-  "numero": 100,
-  "complemento": "CASA 04",
-  "bairro": "Bairro XPTO",
-  "cidade": "Teresópolis - RJ",
-  "uf": "RJ"
+    "cep":"2898542",
+    "logradouro": "Rua das Amoras",
+    "numero": 80,
+    "complemento": "CASA 03",
+    "bairro": "Bairro XYZ",
+    "cidade":"Teresópolis",
+    "uf": "RJ",
+    "titular": {
+        "id": 2
+    }
 }
 ###
 

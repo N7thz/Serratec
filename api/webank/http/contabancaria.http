@@ -1,15 +1,18 @@
 GET http://localhost:8080/api/contas-bancarias
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjk3NjczNzU5LCJleHAiOjE2OTc3NjAxNTl9.HZ2qwqlnyBTR8ek1qqE9vN4iVuwgfbvzkeJDH0n9HOM
 ###
 
 GET http://localhost:8080/api/contas-bancarias/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjk3NjczNzU5LCJleHAiOjE2OTc3NjAxNTl9.HZ2qwqlnyBTR8ek1qqE9vN4iVuwgfbvzkeJDH0n9HOM
 ###
 
 POST http://localhost:8080/api/contas-bancarias
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk3NjczNTU1LCJleHAiOjE2OTc3NTk5NTV9.BF3af3-ZY6rvXeTGjGgYUDZr4MYG9aqlf_jlqvcigMU
 
 {
-    "agencia":"0001",
-    "numero": "12347",
+    "agencia":"0002",
+    "numero": "12341",
     "saldo": 300.0,
     "titular": {
       "id": 1
@@ -19,11 +22,12 @@ Content-Type: application/json
 
 PUT http://localhost:8080/api/contas-bancarias/2
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk3NjczNTU1LCJleHAiOjE2OTc3NTk5NTV9.BF3af3-ZY6rvXeTGjGgYUDZr4MYG9aqlf_jlqvcigMU
 
 {
     "agencia":"0001",
-    "numero": "12346",
-    "saldo": 300.0,
+    "numero": "12343",
+    "saldo": 300.0
  
 }
 ###

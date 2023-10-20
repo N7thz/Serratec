@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -101,6 +102,13 @@ public class UsuarioService  implements CRUDService<UsuarioRequestDTO, UsuarioRe
 
     public UsuarioLoginResponseDTO logar(String email, String senha){
         // Aqui que a autenticação acontece dentro do spring automagicamente.
+
+        Optional<Usuario> optUsuario =usuarioRepository.findByEmail(email);
+
+        if(optUsuario.isEmpty()){
+            throw new BadCredentialsException("Usuário ou senha invalidos");
+        }
+
         Authentication autenticacao = authenticationManager
             .authenticate(new UsernamePasswordAuthenticationToken(email, senha,Collections.emptyList()));
             

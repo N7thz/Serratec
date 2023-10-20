@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return usuarioRepository.findByEmail(username).get();
     }
 
-    public  UserDetails obterUsuarioPeloId(Long id){
+    public UserDetails obterUsuarioPeloId(Long id){
         return usuarioRepository.findById(id).get();
     }
     

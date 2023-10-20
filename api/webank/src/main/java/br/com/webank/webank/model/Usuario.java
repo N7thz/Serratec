@@ -1,7 +1,10 @@
 package br.com.webank.webank.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,17 +13,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class Usuario implements UserDetails {
-  
-    //#region propriedades
+
+    // #region propriedades
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUsuario")
     private long id;
-    
+
     @Column(nullable = false)
     private String nome;
 
@@ -32,18 +36,17 @@ public class Usuario implements UserDetails {
 
     @Column(nullable = false)
     private Date dataCadastro;
- 
-    @Column(nullable = false)
-    private ETipoPerfil tipoPerfil;   
 
-    //#endregion propriedades
+    @Column(nullable = false)
+    private ETipoPerfil tipoPerfil;
+
+    // #endregion propriedades
 
     public Usuario() {
         dataCadastro = new Date();
     }
 
-
-    //#region Getters e setters do usuario
+    // #region Getters e setters do usuario
 
     public Long getId() {
         return id;
@@ -93,12 +96,19 @@ public class Usuario implements UserDetails {
         this.tipoPerfil = tipoPerfil;
     }
 
-    //#endregion
+    // #endregion
 
     // Daqui pra baixo é implementação do userdetails
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-       return null;
+        List<String> perfis = new ArrayList<>();
+        perfis.add(tipoPerfil.toString());
+
+        // Converter a lista de perfis em uma lista de Authorities
+        return perfis.stream()
+                .map(perfil -> new SimpleGrantedAuthority(perfil))
+                // .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -108,12 +118,12 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-       return email;
+        return email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-       return true;
+        return true;
     }
 
     @Override
@@ -128,6 +138,6 @@ public class Usuario implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-       return true;
+        return true;
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.webank.webank.dto.endereco.EnderecoRequestDTO;
 import br.com.webank.webank.dto.endereco.EnderecoResponseDTO;
 import br.com.webank.webank.model.Endereco;
+import br.com.webank.webank.model.Usuario;
 import br.com.webank.webank.model.email.Email;
 import br.com.webank.webank.service.EmailService;
 import br.com.webank.webank.service.EnderecoService;
@@ -43,6 +45,8 @@ public class EnderecoController {
 
     @PostMapping
     public ResponseEntity<EnderecoResponseDTO> adicionar(@RequestBody EnderecoRequestDTO endereco){
+        
+
         EnderecoResponseDTO enderecoAdicionado = enderecoService.adicionar(endereco);
 
         return ResponseEntity

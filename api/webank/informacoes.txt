@@ -31,3 +31,17 @@ Modelo
     Cors
 
     UserDetails
+
+    Autenticação:
+        Consigo criar Usuario OK
+        Consigo logar com o Usuario OK
+        Consigo acessar os endpoints com token OK
+        E tomo erro quando o token é invalido ou não enviado. OK
+        Devolver um 401 quando não tiver authenticado OK
+    
+    Autorização
+        Configurar o sistema para trabalhar com autorização. OK
+        Não conseguir acessar um endpoint que não estou autorizado. OK
+        Acessar um endpoint que eu sou autorizado. OK
+    
+    
