@@ -48,7 +48,7 @@ public class UsuarioService  implements CRUDService<UsuarioRequestDTO, UsuarioRe
 
     @Override
     public List<UsuarioResponseDTO> obterTodos() {
-     List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Usuario> usuarios = usuarioRepository.findAll();
 
         return usuarios.stream()
             .map(usuario -> mapper.map(usuario, UsuarioResponseDTO.class))

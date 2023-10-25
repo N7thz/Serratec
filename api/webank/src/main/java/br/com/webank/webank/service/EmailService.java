@@ -36,7 +36,6 @@ public class EmailService {
             System.out.println("Deu ruim no envio de e-mail:");
             System.out.println(e.getMessage());
         }
-     
 
     }
 }

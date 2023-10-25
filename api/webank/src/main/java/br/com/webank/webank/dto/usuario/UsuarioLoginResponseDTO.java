@@ -1,9 +1,8 @@
 package br.com.webank.webank.dto.usuario;
 
 public class UsuarioLoginResponseDTO  {
-  
-    private String token;
 
+    private String token;
     private UsuarioResponseDTO usuario;
 
     public UsuarioLoginResponseDTO(String token, UsuarioResponseDTO usuario) {
