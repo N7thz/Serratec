@@ -9,7 +9,7 @@ function App() {
   const [tarefa, setTarefa] = useState('')
 
   const handleChangeTarefa = (e) => {
-    
+
     setTarefa(e.target.value)
   }
 
@@ -39,9 +39,6 @@ function App() {
           <button onClick={() => {handleConcluir(value)}}>Concluir</button>
         </div>
       ))}
-
-    {/*<label>Lavar carro</label>
-      <button>Concluido</button> */}
     </>
   )
 }
