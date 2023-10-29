@@ -1,0 +1,9 @@
+{
+    "workbench.panel.defaultLocation": "bottom",
+    "terminal.explorerKind": "integrated",
+    "terminal.integrated.automationProfile.windows": {
+
+
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
