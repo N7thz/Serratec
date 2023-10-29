@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .itemLista {
+    .itens {
         @apply flex items-center gap-4 h-3/6 w-full overflow-hidden text-zinc-50
     }
 }

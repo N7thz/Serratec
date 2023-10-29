@@ -1,11 +1,23 @@
 import { useState } from 'react'
-import Musica from './components/musica'
 
-//#region extensoes
+//#region Components
+import Musica from './components/Musica'
+import InfoMusica from './components/InfoMusica'
+//#endregion
+
+//#region Icons
 import { RiHome2Line } from "react-icons/ri";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdSearch } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+import { ImPrevious2 } from "react-icons/im";
+import { ImNext2 } from "react-icons/im";
+import { ImVolumeMute2 } from "react-icons/im";
+import { ImVolumeHigh } from "react-icons/im";
+import { ImShuffle } from "react-icons/im";
+import { ImLoop2 } from "react-icons/im";
+import { LuHeart } from "react-icons/lu";
+
 //#endregion
 
 
@@ -20,9 +32,9 @@ import motoserraImg from './assets/imgs/chainsaw-man-op.jpg'
 //#region Audios
 import goatAudio from './assets/audios/polyphia-G.O.A.T.mp3'
 import pomboAudio from './assets/audios/eren-pombo.mp3'
-import spiderVerseAudio from './assets/audios/polyphia-G.O.A.T.mp3'
+import spiderVerseAudio from './assets/audios/spider-man-annihilate.mp3'
 import valorantAudio from './assets/audios/safari-riot-vision.mp3'
-import motoserraAudio from './assets/audios/spider-man-annihilate.mp3'
+import motoserraAudio from './assets/audios/chainsaw-man.mp3'
 //#endregion
 
 function App() {
@@ -74,7 +86,7 @@ function App() {
   const musicas = [goat, pombo, spiderVerse, valorant, motoserra]
 
   return (
-    
+
     <div className='min-h-screen mx-auto overflow-hidden'>
 
       <div className='flex items-center justify-around gap-2 h-[70vw] min-w-full bg-zinc-800'>
@@ -82,19 +94,19 @@ function App() {
 
           <ul className='h-1/6'>
 
-            <li className='itemLista rounded-t-lg'> 
-              <RiHome2Line className='ml-3'/> Início
+            <li className='itens rounded-t-lg'>
+              <RiHome2Line className='ml-3' /> Início
             </li>
-            <li className='itemLista'> 
-              <MdSearch className='ml-3'/> Pesquisa
+            <li className='itens'>
+              <MdSearch className='ml-3' /> Pesquisa
             </li>
-            <li className='itemLista'>
-              <h1> <HiMiniBars3CenterLeft/> Biblioteca</h1>
+            <li className='itens'>
+              <HiMiniBars3CenterLeft className='ml-3' /> Biblioteca
             </li>
           </ul>
 
           <div className='mt-20'>
-            {musicas.map((musica) => <Musica musica={musica}/>)}
+            {musicas.map((musica) => <Musica musica={musica} />)}
           </div>
 
         </aside>
@@ -103,9 +115,9 @@ function App() {
         </main>
       </div>
       <footer className='bg-zinc-700 h-20 w-full absolute bottom-0'>
-
-      </footer>
-    </div>
+        <InfoMusica musica={spiderVerse}/>
+      </footer >
+    </div >
   )
 }
 
