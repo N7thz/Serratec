@@ -7,3 +7,9 @@
         @apply flex items-center gap-4 h-3/6 w-full overflow-hidden text-zinc-50
     }
 }
+
+@layer components {
+    .btns-audio {
+        @apply text-2xl text-zinc-50
+    }
+}

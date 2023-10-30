@@ -3,23 +3,18 @@ import { useState } from 'react'
 //#region Components
 import Musica from './components/Musica'
 import InfoMusica from './components/InfoMusica'
+import BarraAudio from './components/BarraAudio'
 //#endregion
 
 //#region Icons
 import { RiHome2Line } from "react-icons/ri";
-import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdSearch } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-import { ImPrevious2 } from "react-icons/im";
-import { ImNext2 } from "react-icons/im";
 import { ImVolumeMute2 } from "react-icons/im";
 import { ImVolumeHigh } from "react-icons/im";
-import { ImShuffle } from "react-icons/im";
-import { ImLoop2 } from "react-icons/im";
-import { LuHeart } from "react-icons/lu";
-
+import { BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
+import { BiPause } from "react-icons/bi";
 //#endregion
-
 
 //#region Imagem
 import goatImg from './assets/imgs/goat.jpg'
@@ -114,11 +109,15 @@ function App() {
           
         </main>
       </div>
-      <footer className='bg-zinc-700 h-20 w-full absolute bottom-0'>
+      <footer className='bg-zinc-700 h-20 w-full absolute bottom-0 flex'>
         <InfoMusica musica={spiderVerse}/>
+        <BarraAudio />
+        <div className='w-1/4'></div>
+        
       </footer >
     </div >
   )
 }
 
 export default App
+

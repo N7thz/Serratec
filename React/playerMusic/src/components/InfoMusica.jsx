@@ -3,7 +3,7 @@ import { SiGithubsponsors } from "react-icons/si";
 const InfoMusica = ({ musica }) => {
 
     return (
-        <div className='bg-red-400 h-full w-52 flex items-center justify-around'>
+        <div className='bg-red-400 h-full w-1/4 flex items-center justify-around'>
             <img src={musica.capa} className='h-5/6 rounded-lg' alt={musica.nome} />
             <div className='flex gap-2 items-center'>
                 <div>
