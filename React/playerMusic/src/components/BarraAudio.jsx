@@ -1,7 +1,4 @@
-import { ImPrevious2 } from "react-icons/im";
-import { ImNext2 } from "react-icons/im";
-import { ImShuffle } from "react-icons/im";
-import { ImLoop2 } from "react-icons/im";
+import { ImPrevious2, ImNext2, ImShuffle, ImLoop2 } from "react-icons/im";
 import { BiPlay } from "react-icons/bi";
 
 const BarraAudio = () => {
@@ -17,7 +14,7 @@ const BarraAudio = () => {
                 <ImLoop2 className='btns-audio' />
             </div>
             <span className='flex w-5/6'>
-                <p>0.00</p><input type="range" id="" className='w-full mx-2' /><p>0.00</p>
+                <p>0.00</p><input type="range" className='w-full mx-2' /><p>0.00</p>
             </span>
         </div>
     )

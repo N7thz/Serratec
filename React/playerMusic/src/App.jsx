@@ -10,10 +10,11 @@ import BarraAudio from './components/BarraAudio'
 import { RiHome2Line } from "react-icons/ri";
 import { MdSearch } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-import { ImVolumeMute2 } from "react-icons/im";
-import { ImVolumeHigh } from "react-icons/im";
+import { ImVolumeMute2, ImVolumeHigh } from "react-icons/im";
 import { BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
 import { BiPause } from "react-icons/bi";
+import { FaSquareCaretRight, FaMicrophoneLines} from "react-icons/fa6";
+
 //#endregion
 
 //#region Imagem
@@ -109,11 +110,12 @@ function App() {
           
         </main>
       </div>
-      <footer className='bg-zinc-700 h-20 w-full absolute bottom-0 flex'>
+      <footer className='bg-zinc-700 h-20 w-full absolute bottom-0 flex '>
         <InfoMusica musica={spiderVerse}/>
         <BarraAudio />
-        <div className='w-1/4'></div>
-        
+        <div className='w-1/4'>
+
+        </div>
       </footer >
     </div >
   )
