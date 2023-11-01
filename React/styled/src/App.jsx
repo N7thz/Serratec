@@ -1,21 +1,11 @@
 import { useState } from 'react'
-import './App.css'
+import { Form } from './form.jsx'
 
 function App() {
 
   return (
     <>
-      <form>
-        <div>
-          <label>Email: </label>
-          <input/>
-        </div>
-        <div>
-          <label>Senha: </label>
-          <input/>
-        </div>
-        <button>Login</button>
-      </form>
+      <Form/>
     </>
   )
 }
