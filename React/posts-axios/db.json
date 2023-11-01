@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "comentario": "123",
+      "autor": "claudio",
+      "id": 1
+    },
+    {
+      "comentario": "carlos",
+      "autor": "roberto",
+      "id": 2
+    },
+    {
+      "author": "Rodrigin",
+      "comentario": "Bala torta",
+      "likes": 2,
+      "id": 3
+    },
+    {
+      "comentario": "12",
+      "autor": "carlos",
+      "id": 4
+    }
+  ]
+}
