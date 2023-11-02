@@ -13,8 +13,6 @@ import Comentario from './pages/comentarios.jsx'
 import Pessoa from './pages/pessoa.jsx'
 import Erro404 from './pages/erro404.jsx';
 
-
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -39,7 +37,6 @@ const router = createBrowserRouter([
     path: '/pessoa/:nome',
     element: <Pessoa />
   }
-
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

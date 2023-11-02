@@ -20,7 +20,7 @@ const StyledForm = styled.form`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    div {
+    .campo {
 
         width: 90%;
         display: flex;
@@ -65,12 +65,12 @@ export const Form = () => {
 
                 <h1>Login</h1>
 
-                <div>
+                <div className='campo'>
                     <label>E-mail: </label>
                     <input />
                 </div>
 
-                <div>
+                <div className='campo'>
                     <label>Senha: </label>
                     <input />
                 </div>
