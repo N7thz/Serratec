@@ -12,7 +12,7 @@ function App() {
 
   return (
     
-    <div className={`App ${theme === "dark" ? "dark-theme": ""}`}>
+  <div className={`App ${theme} === "dark" ? "dark-theme": ""`}>
       <Navbar />
       <Outlet />
     </div>
