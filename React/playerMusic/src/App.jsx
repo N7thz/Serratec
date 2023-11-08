@@ -1,85 +1,24 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 //#region Components
 import Musica from './components/Musica'
 import InfoMusica from './components/InfoMusica'
 import BarraAudio from './components/BarraAudio'
+import CampoAudio from './components/CampoAudio'
+import PageMusica from './components/pageMusica'
 //#endregion
 
 //#region Icons
 import { RiHome2Line } from "react-icons/ri";
 import { MdSearch } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-import { ImVolumeMute2, ImVolumeHigh } from "react-icons/im";
-import { BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
-import { BiPause } from "react-icons/bi";
-import { FaSquareCaretRight, FaMicrophoneLines} from "react-icons/fa6";
-
 //#endregion
 
-//#region Imagem
-import goatImg from './assets/imgs/goat.jpg'
-import pomboImg from './assets/imgs/erenPombo.jpg'
-import spiderVerseImg from './assets/imgs/spiderverse.png'
-import valorantImg from './assets/imgs/valorant.png'
-import motoserraImg from './assets/imgs/chainsaw-man-op.jpg'
-//#endregion Imagens
-
-//#region Audios
-import goatAudio from './assets/audios/polyphia-G.O.A.T.mp3'
-import pomboAudio from './assets/audios/eren-pombo.mp3'
-import spiderVerseAudio from './assets/audios/spider-man-annihilate.mp3'
-import valorantAudio from './assets/audios/safari-riot-vision.mp3'
-import motoserraAudio from './assets/audios/chainsaw-man.mp3'
-//#endregion
+import { MusicaContext } from './context/MusicaContext'
 
 function App() {
 
-  const [nome, setNome] = useState('')
-  const [artista, setArtista] = useState('')
-  const [capa, setCapa] = useState('')
-
-  const goat = {
-
-    nome: "G.O.A.T",
-    artista: "Polyphia",
-    capa: goatImg,
-    musica: goatAudio
-  }
-
-  const pombo = {
-
-    nome: "The Rumbling",
-    artista: "Eren Pombo",
-    capa: pomboImg,
-    musica: pomboAudio
-  }
-
-  const spiderVerse = {
-
-    nome: "Annihalate",
-    artista: "Miranha",
-    capa: spiderVerseImg,
-    musica: spiderVerseAudio
-  }
-
-  const valorant = {
-
-    nome: "Visions",
-    artista: "Safari",
-    capa: valorantImg,
-    musica: valorantAudio
-  }
-
-  const motoserra = {
-
-    nome: "Kick Back",
-    artista: "Randandan",
-    capa: motoserraImg,
-    musica: motoserraAudio
-  }
-
-  const musicas = [goat, pombo, spiderVerse, valorant, motoserra]
+  const { musica , musicas } = useContext(MusicaContext)
 
   return (
 
@@ -106,20 +45,17 @@ function App() {
           </div>
 
         </aside>
-        <main className='bg-zinc-700 h-[87%] w-3/4 mr-2 rounded-lg'>
-          
+        <main className='bg-zinc-700 h-[87%] w-3/4 mr-2 rounded-t-lg'>
+          <PageMusica musica={musica}/> 
         </main>
       </div>
       <footer className='bg-zinc-700 h-20 w-full absolute bottom-0 flex '>
-        <InfoMusica musica={spiderVerse}/>
+        <InfoMusica musica={musica} />
         <BarraAudio />
-        <div className='w-1/4'>
-
-        </div>
+        <CampoAudio />
       </footer >
     </div >
   )
 }
 
 export default App
-

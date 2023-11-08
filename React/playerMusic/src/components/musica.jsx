@@ -1,8 +1,19 @@
-const Musica = ({musica}) => {
+import { useContext } from "react"
+import { MusicaContext } from "../context/MusicaContext"
+
+const Musica = ({ musica }) => {
+
+    const { setMusica, setExist } = useContext(MusicaContext)
+
+    const trocarMusica = () => {
+
+        setMusica(musica)
+        setExist(true)
+    }
 
     return (
-        <div className='w-full h-16 flex hover:bg-zinc-600 my-2  rounded-lg'>
-            <img src={musica.capa} className='m-2 rounded-full ' alt={musica.nome}  />
+        <div onClick={trocarMusica} className='w-full h-16 flex hover:bg-zinc-600 my-2  rounded-lg'>
+            <img src={musica.capa} className='m-2 rounded-full ' alt={musica.nome} />
 
             <section className='w-[95%] pl-2 flex flex-col justify-around'>
                 <h1 className='text-zinc-50'>

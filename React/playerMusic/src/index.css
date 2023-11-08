@@ -10,6 +10,6 @@
 
 @layer components {
     .btns-audio {
-        @apply text-2xl text-zinc-50
+        @apply text-2xl text-zinc-50 cursor-pointer active:scale-90
     }
 }
