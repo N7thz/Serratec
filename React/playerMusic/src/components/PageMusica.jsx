@@ -1,21 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { BiPlay, BiPause } from "react-icons/bi";
 import { MusicaContext } from "../context/MusicaContext";
 
 const PageMusica = ({ musica }) => {
 
-    const { exist } = useContext(MusicaContext)
+    const { exist, song, musicas } = useContext(MusicaContext)
+    const [playing, setPlaying] = useState(false)
 
-    const [playing, setPlaying] = useState(false);
+    const handlePlay = () => {
 
-    const song = new Audio(musica.musica);
+        !playing ? song.play() : song.pause()
 
-    const handlePlayPause = () => {
-
-        (!playing) ? song.play() : song.pause();
-
-        setPlaying(!playing);
-    };
+        setPlaying(!playing)
+    }
 
     if (exist) {
 
@@ -31,10 +28,9 @@ const PageMusica = ({ musica }) => {
 
                     {
                         playing ?
-                            <BiPause onClick={handlePlayPause} className="bg-zinc-50 text-7xl rounded-full mr-5 hover: cursor-pointer active:scale-90" /> :
-                            <BiPlay onClick={handlePlayPause} className="bg-zinc-50 text-7xl rounded-full mr-5 hover: cursor-pointer active:scale-90" />
+                            <BiPause onClick={handlePlay} className="bg-zinc-50 text-7xl rounded-full mr-5 hover: cursor-pointer active:scale-90" /> :
+                            <BiPlay onClick={handlePlay} className="bg-zinc-50 text-7xl rounded-full mr-5 hover: cursor-pointer active:scale-90" />
                     }
-
                 </div>
             </div>
         )

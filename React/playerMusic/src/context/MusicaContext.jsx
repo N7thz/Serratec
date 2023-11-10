@@ -18,7 +18,7 @@ import chainsawBanner from '../assets/imgs/chainsaw-man-banner.jpg'
 import goatAudio from '../assets/audios/polyphia-G.O.A.T.mp3'
 import pomboAudio from '../assets/audios/eren-pombo.mp3'
 import spiderVerseAudio from '../assets/audios/spider-man-annihilate.mp3'
-import valorantAudio from '../assets/audios/safari-riot-vision.mp3'
+import valorantAudio from '../assets/audios/safari-riot-vision.mp3' 
 import motoserraAudio from '../assets/audios/chainsaw-man.mp3'
 //#endregion
 
@@ -26,8 +26,10 @@ export const MusicaContext = createContext()
 
 export const MusicaProvider = ({ children }) => {
 
+//#region Musicas    
     const goat = {
 
+        id: 1,
         nome: "G.O.A.T",
         artista: "Polyphia",
         capa: goatImg,
@@ -37,6 +39,7 @@ export const MusicaProvider = ({ children }) => {
 
     const pombo = {
 
+        id: 2,
         nome: "The Rumbling",
         artista: "Eren Pombo",
         capa: pomboImg,
@@ -46,6 +49,7 @@ export const MusicaProvider = ({ children }) => {
 
     const spiderVerse = {
 
+        id: 3,
         nome: "Annihalate",
         artista: "Miranha",
         capa: spiderVerseImg,
@@ -55,6 +59,7 @@ export const MusicaProvider = ({ children }) => {
 
     const valorant = {
 
+        id: 4,
         nome: "Visions",
         artista: "Safari",
         capa: valorantImg,
@@ -64,24 +69,26 @@ export const MusicaProvider = ({ children }) => {
 
     const motoserra = {
 
+        id: 5,
         nome: "Kick Back",
         artista: "Randandan",
         banner: chainsawBanner,
         capa: motoserraImg,
         musica: motoserraAudio
     }
-
-    const [nome, setNome] = useState('')
-    const [artista, setArtista] = useState('')
-    const [capa, setCapa] = useState('')
-    const [musica, setMusica] = useState({})
-    const [exist, setExist] = useState(false)
+//#endregion
 
     const musicas = [goat, pombo, spiderVerse, valorant, motoserra]
+    const [ musica, setMusica ] = useState(musicas[0])
+    const [ exist, setExist ] = useState(false)
+    const [ playing, setPlaying ] = useState(false)
+    const song = new Audio(musica.musica)    
+
+    console.log(song.duration);
 
     return (
         
-        <MusicaContext.Provider value={{musica, setMusica, musicas, goat, pombo, spiderVerse, valorant, motoserra, exist, setExist}}>
+        <MusicaContext.Provider value={{song, musica, setMusica, musicas, goat, pombo, spiderVerse, valorant, motoserra, exist, setExist, playing, setPlaying}}>
             {children}
         </MusicaContext.Provider>
     )

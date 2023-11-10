@@ -43,9 +43,8 @@ function App() {
           <div className='mt-20'>
             {musicas.map((musica) => <Musica musica={musica} />)}
           </div>
-
         </aside>
-        <main className='bg-zinc-700 h-[87%] w-3/4 mr-2 rounded-t-lg'>
+        <main className='bg-zinc-700 h-[87%] w-3/4 mr-2 rounded-lg'>
           <PageMusica musica={musica}/> 
         </main>
       </div>
