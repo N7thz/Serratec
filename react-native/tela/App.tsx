@@ -1,7 +1,8 @@
 
 import * as React from 'react';
-import { StyleSheet, Text, View, Dimensions, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default function App() {
@@ -11,7 +12,8 @@ export default function App() {
     <>
       <View style={styles.container}>
         <LinearGradient
-          colors={['#4c669f', '#094de1', '#620e96']}
+
+          colors={['#1f60ee', '#673cf4', '#bd86e4']}
           style={styles.background}>
 
           <View style={styles.quadro}>
@@ -20,10 +22,11 @@ export default function App() {
             </Text>
             <TextInput placeholder='Digite um título' style={styles.input} />
             <Text style={styles.text}>
-              Descrição:
+              Descrição :
             </Text>
+            <TextInput placeholder='Digite seu sonho' style={styles.sonho}/>
+            {/* <AntDesign name="staro" size={24} color="white" /> */}
           </View>
-
         </LinearGradient>
       </View>
     </>
@@ -32,47 +35,63 @@ export default function App() {
 
 const styles = StyleSheet.create({
 
-  container: {
+  container : {
 
-    backgroundColor: 'red',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around'
+    flex : 2,
+    alignItems : 'center'
+  },
+
+  background : {
+    
+    flex : 2,
+    width : '100%',
+    height : '100%',
+    alignItems : 'center',
+    justifyContent : 'center'
   },
 
   quadro : {
 
-    backgroundColor : 'red',
     width : '90%',
-    height : '30%'
+    height : '50%'
   },
 
-  text: {
+  title : {
 
-    color: '#fff'
+    flex : 2,
+    fontSize : 32,
+    color : '#fff'
   },
 
-  background: {
+  input : {
 
-    width: '100%',
-    height: '100%',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex : 1,
+    justifyContent : 'center',
+    width : '100%',
+    backgroundColor : '#ffffff21',
+    borderBottomColor : '#0c79af',
+    borderRadius : 4,
+    padding : 4
   },
 
-  title: {
+  text : {
 
-    fontSize: 36,
-    color: '#fff'
+    flex : 2,
+    fontSize : 28,
+    color : '#fff',
+    marginTop : 20,
+    marginBottom : -60
   },
 
-  input: {
+  sonho : {
 
-    width: '80%',
-    backgroundColor: '#ffffff21',
-    borderBottomColor: '#0c79af',
-    borderRadius: 4,
-    padding: 4
+    flex : 3,
+    width : '100%',
+    height : '30%',
+    backgroundColor : '#ffffff21',
+    borderBottomColor : '#0c79af',
+    borderRadius : 4,
+    padding : 4,
+    marginVertical : 12
   }
 });
