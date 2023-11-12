@@ -2,19 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 
-    background: {
+    play : {
 
+        flex : 1.5,
         width: '100%',
-        height: '100%',
-        alignItems : 'center'
-    },
-
-    center : {
-
-        justifyContent : 'center',
+        flexDirection : 'row',
+        justifyContent : 'space-evenly',
         alignItems : 'center',
     },
 
-
-
-});
+})

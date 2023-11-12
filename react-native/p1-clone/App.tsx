@@ -1,31 +1,36 @@
-import { Text, View, TextInput, TouchableOpacity, TouchableOpacityProps } from 'react-native';
-import { useFonts } from 'expo-font';
 import { styles } from './styles';
-import { OpcLogin } from './src/assets/components/OpcLogin';
-import { Inputs } from './src/assets/components/Inputs';
-import { Entypo } from '@expo/vector-icons';
-import { Button } from './src/assets/components/Button';
-import { Info } from './src/assets/components/Info';
+
+import { useFonts } from 'expo-font';
+import { LinearGradient } from 'expo-linear-gradient';
+
+import { Header } from './src/assets/components/Header';
+import { Main } from './src/assets/components/Main';
+import { Title } from './src/assets/components/Title';
+import { BarProgress } from './src/assets/components/BarProgress';
+import { Play } from './src/assets/components/Play';
+import { Footer } from './src/assets/components/Footer';
+import { More } from './src/assets/components/More';
 
 export default function App() {
 
-  const [fontsLoaded] = useFonts({
-    'spotifyFont': require('./src/assets/fonts/spofify-fonts/Gotham-Medium.ttf')
-  })
+    const [fontsLoaded] = useFonts({
 
-  return (
+        'spotifyFont': require('./src/assets/fonts/spofify-fonts/Gotham-Medium.ttf'),
 
-    <View style={styles.background}>
+        'spotifyLight': require('./src/assets/fonts/spofify-fonts/Gotham-Light.otf')
+    })
 
-      <View style={styles.container}>
-        <Text style={[styles.title, { fontFamily: 'spotifyFont' }]}>Entrar no Spotify</Text>
-        <OpcLogin />
-        <Inputs />
-        <Button activeOpacity={.3} onPress={() => {alert('é os guri')}}/>
-        <Info />
-      </View>
-    </View>
-  );
+    return (
+
+        <LinearGradient colors={['#cc2c2c', '#161211']} style={styles.background}>
+
+            <Header />
+            <Main />
+            <Title />
+            <BarProgress />
+            <Play />
+            <Footer />
+            <More />
+        </LinearGradient>
+    )
 }
-
-
