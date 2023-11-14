@@ -23,7 +23,6 @@ export default function App() {
     return (
 
         <LinearGradient colors={['#cc2c2c', '#161211']} style={styles.background}>
-
             <Header />
             <Main />
             <Title />
