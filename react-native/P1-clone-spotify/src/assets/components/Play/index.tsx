@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { Audio } from 'expo-av';
 
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import audio from '../../audios/BillieEilish_myBoy.mp3'
 
 export const Play = () => {
 
@@ -45,7 +46,9 @@ export const Play = () => {
 
             {
                 !playing ?
-                    <AntDesign name="play" size={72} color="white" onPress={playSound} /> :
+                    <TouchableOpacity>
+                        <AntDesign name="play" size={72} color="white" onPress={playSound} />
+                    </TouchableOpacity> :
                     <AntDesign name="pausecircle" size={72} color="white" onPress={playSound} />
             }
 

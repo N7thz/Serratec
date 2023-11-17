@@ -3,11 +3,12 @@ import { Feather } from '@expo/vector-icons'
 import Feed from '../screens/Feed'
 import New from '../screens/New'
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator ()
 
 export default function TabRoutes() {
 
     return (
+
         <Tab.Navigator screenOptions={{ headerShown : false}}>
 
             <Tab.Screen 
